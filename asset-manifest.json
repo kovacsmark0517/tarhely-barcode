@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tarhely-barcode/static/css/main.a05f041f.css",
+    "main.js": "/tarhely-barcode/static/js/main.d5816d15.js",
+    "static/js/453.abc4a0cc.chunk.js": "/tarhely-barcode/static/js/453.abc4a0cc.chunk.js",
+    "index.html": "/tarhely-barcode/index.html",
+    "main.a05f041f.css.map": "/tarhely-barcode/static/css/main.a05f041f.css.map",
+    "main.d5816d15.js.map": "/tarhely-barcode/static/js/main.d5816d15.js.map",
+    "453.abc4a0cc.chunk.js.map": "/tarhely-barcode/static/js/453.abc4a0cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a05f041f.css",
+    "static/js/main.d5816d15.js"
+  ]
+}
