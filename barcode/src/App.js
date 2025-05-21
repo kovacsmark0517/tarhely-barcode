@@ -5,11 +5,11 @@ import BarcodeComponent from './components/barcodeComponent';
 function App() {
     // Állapotok
     const [raktartipus, setRaktartipus] = useState('E04');
-    const [sor, setSor] = useState('1'); // Kezdő sorérték
-    const [oszlop, setOszlop] = useState('1'); // Kezdő oszlopérték
-    const [emelet, setEmelet] = useState('1'); // Kezdő emeletérték
+    const [sor, setSor] = useState('01'); // Kezdő sorérték nullával kiegészítve
+    const [oszlop, setOszlop] = useState('01'); // Kezdő oszlopérték nullával kiegészítve
+    const [emelet, setEmelet] = useState('1'); // Kezdő emeletérték (nincs nullázás)
     const [elvalaszto, setElvalaszto] = useState('/'); // Alapértelmezett "/"
-    const [hely, setHely] = useState('1'); // Kezdő helyérték
+    const [hely, setHely] = useState('1'); // Kezdő helyérték (nincs nullázás)
 
     // Értékek (1-31 számok, 1-8 emelet, 1-4 hely és A-O betűk)
     const szamok = Array.from({ length: 31 }, (_, i) => (i + 1).toString()); // ['1', ... '31']
@@ -66,17 +66,17 @@ function App() {
                     {szamok.map((szam) => (
                         <button
                             key={szam}
-                            onClick={() => setSor(szam)}
+                            onClick={() => setSor(szam.padStart(2, '0'))} // Nullával egészítjük ki az értéket, ha szükséges
                             style={{
                                 margin: '2px',
                                 padding: '5px 10px',
-                                backgroundColor: sor === szam ? 'lightgreen' : 'white',
+                                backgroundColor: sor === szam.padStart(2, '0') ? 'lightgreen' : 'white',
                                 border: '1px solid black',
                                 borderRadius: '4px',
                                 cursor: 'pointer',
                             }}
                         >
-                            {szam}
+                            {szam.padStart(2, '0')} {/* Gomb feliratának megjelenítése nullázva */}
                         </button>
                     ))}
                     {betuk.map((betu) => (
@@ -102,17 +102,17 @@ function App() {
                     {szamok.map((szam) => (
                         <button
                             key={szam}
-                            onClick={() => setOszlop(szam)}
+                            onClick={() => setOszlop(szam.padStart(2, '0'))} // Nullával egészítjük ki az értéket, ha szükséges
                             style={{
                                 margin: '2px',
                                 padding: '5px 10px',
-                                backgroundColor: oszlop === szam ? 'lightgreen' : 'white',
+                                backgroundColor: oszlop === szam.padStart(2, '0') ? 'lightgreen' : 'white',
                                 border: '1px solid black',
                                 borderRadius: '4px',
                                 cursor: 'pointer',
                             }}
                         >
-                            {szam}
+                            {szam.padStart(2, '0')} {/* Gomb feliratának megjelenítése nullázva */}
                         </button>
                     ))}
                 </div>
@@ -122,7 +122,7 @@ function App() {
                     {emeletSzamok.map((szam) => (
                         <button
                             key={szam}
-                            onClick={() => setEmelet(szam)}
+                            onClick={() => setEmelet(szam)} // Nincs nullázás
                             style={{
                                 margin: '2px',
                                 padding: '5px 10px',
@@ -142,7 +142,7 @@ function App() {
                     {helySzamok.map((szam) => (
                         <button
                             key={szam}
-                            onClick={() => setHely(szam)}
+                            onClick={() => setHely(szam)} // Nincs nullázás
                             style={{
                                 margin: '2px',
                                 padding: '5px 10px',
