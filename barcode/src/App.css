@@ -1,3 +1,7 @@
+*{
+  background-color: #3f3f41;
+}
+
 .Container{
   display: flex;
   flex-direction: column;
@@ -6,10 +10,12 @@
   text-align: center;
 }
 
-
-.Barcode{
-
+button{
+  color: black;
+  appearance: none;
+  text-decoration: none;
 }
+
 
 
 
